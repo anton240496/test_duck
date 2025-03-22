@@ -211,6 +211,7 @@ button {
 
 .footer_item {
   height: 32px;
+  padding: 6px 0;
   cursor: pointer;
 }
 
