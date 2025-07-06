@@ -5,15 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>valyt</title>
+  <title>test</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
-  <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -56,15 +54,13 @@
             <li class="menu_item hover"><a href="">Блог</a></li>
             <li class="menu_item hover"><a href="">Отзывы</a></li>
             <li class="menu_item hover"><a href="">Контакты</a></li>
-            <li class="display">
-            </li>
           </ul>
         </nav>
 
         <!-- mobile -->
         <div class="menu_mobile">
           <div class="mobile_header">
-            <a href="" class="logo" data-aos="flip-right"><img src="img/Logo.svg" alt=""></a>
+            <a href="" class="logo" ><img src="img/Logo.svg" alt=""></a>
             <svg class="close" width="40" height="40" viewBox="0 0 40 40" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <rect x="7" y="7" width="26" height="26" rx="13" fill="white" />
@@ -75,14 +71,14 @@
           </div>
           <nav>
             <ul class="menu ">
-              <li class="menu_item  active" data-aos="fade-up"><a href="">Главная</a></li>
-              <li class="menu_item hover catalog" data-aos="fade-down"><a href="">Каталог</a></li>
-              <li class="menu_item hover" data-aos="fade-right"><a href="">Блог</a></li>
-              <li class="menu_item hover" data-aos="fade-left"><a href="">Отзывы</a></li>
-              <li class="menu_item hover" data-aos="zoom-in"><a href="">Контакты</a></li>
+              <li class="menu_item  active"><a href="">Главная</a></li>
+              <li class="menu_item catalog"><a href="">Каталог</a></li>
+              <li class="menu_item"><a href="">Блог</a></li>
+              <li class="menu_item"><a href="">Отзывы</a></li>
+              <li class="menu_item"><a href="">Контакты</a></li>
             </ul>
           </nav>
-          <button class="h_btn h_m sss" data-aos="zoom-out">Заказать обратный звонок</button>
+          <button class="callback">Заказать обратный звонок</button>
         </div>
 
         <!-- mobile -->
@@ -106,7 +102,7 @@
             </svg>
 
           </button>
-          <button class="sss h_btn">Заказать обратный звонок</button>
+          <button class="callback">Заказать обратный звонок</button>
 
           <button class="menu_btn">
             <span></span>
@@ -120,14 +116,14 @@
   </header>
   <main class="main">
     <div class="container">
-      <div class="main_inner">
+      <section class="hero">
         <p class="many title">Много</p>
-        <img class="main_img" src="img/duck.png" alt="">
+        <img class="hero_img" src="img/duck.png" alt="">
         <p class="duck title">уточек</p>
         <div class="info">
           <p class="text">Маленький друг найдётся для каждого в этом кряквенно жёлтом мире</p>
-          <button class="m_btn">Смотреть уточек</button>
-        </div>
+          <button class="hero_btn">Смотреть уточек</button>
+        </section>
       </div>
     </div>
   </main>
@@ -192,7 +188,6 @@
     </div>
   </footer>
 
-  <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
   <script src="js/main.js"></script>
 </body>
 
