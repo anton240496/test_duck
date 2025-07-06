@@ -1,9 +1,4 @@
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
 
 body {
   font-family: Inter;
@@ -11,11 +6,6 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #1F2937;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .title {
@@ -28,30 +18,6 @@ a {
 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-img {
-  object-fit: cover;
-}
-
-button {
-  border: none;
-  cursor: pointer;
-}
 
 .container {
   max-width: 1280px;
@@ -86,6 +52,7 @@ button {
   position: relative;
   padding: 8px 0;
   cursor: pointer;
+  transition: all .5s;
 }
 
 .active {
@@ -99,8 +66,12 @@ button {
   margin-left: 8px;
 }
 
-.hover:hover {
+.menu_item:not(.active):hover {
   color: #2581EB;
+}
+
+.hover svg path {
+  transition: all .5s;
 }
 
 .hover:hover svg path {
@@ -111,7 +82,8 @@ button {
   gap: 9px;
 }
 
-.h_btn {
+.callback,
+.form_btn {
   background-color: #EAB308;
   color: #fff;
   font-weight: 600;
@@ -120,18 +92,20 @@ button {
   text-align: center;
   padding: 10px 12px;
   border-radius: 8px;
-
+  transition: all .5s;
 }
 
-.h_btn:hover {
+.callback:hover,
+.form_btn:hover {
   background-color: #FEC71C;
 }
 
-.h_btn:active {
+.callback:active,
+.form_btn:active {
   background-color: #CC9500;
 }
 
-.main_inner {
+.hero {
   position: relative;
   height: 620px;
   margin-top: 76px;
@@ -142,7 +116,7 @@ button {
   margin-top: -40px;
 }
 
-.main_img {
+.hero_img {
   position: absolute;
   top: 50%;
   left: 48%;
@@ -159,7 +133,7 @@ button {
   z-index: 1;
 }
 
-.m_btn {
+.hero_btn {
   background-color: #2581EB;
   border-radius: 8px;
   padding: 10px 12px;
@@ -169,17 +143,16 @@ button {
   font-size: 15px;
   line-height: 100%;
   margin-top: 8px;
+  transition: all .5s;
 }
 
-.m_btn:hover {
+.hero_btn:hover {
   background-color: #439FFF;
 }
 
-.m_btn:active {
+.hero_btn:active {
   background-color: #0763CD;
 }
-
-
 
 .h_korzina {
   border: 1px solid transparent;
@@ -187,6 +160,11 @@ button {
   width: 40px;
   height: 40px;
   background: transparent;
+  transition: all .5s;
+}
+
+.h_korzina:hover svg path {
+  transition: all .5s;
 }
 
 .h_korzina:hover,
@@ -194,7 +172,6 @@ button {
   border: 1px solid #2581EB;
   stroke: #2581EB;
 }
-
 
 .h_korzina:active,
 .h_korzina:active svg path {
@@ -213,11 +190,16 @@ button {
   height: 32px;
   padding: 6px 0;
   cursor: pointer;
+  transition: all .5s;
 }
 
 .footer_item svg {
   width: 32px;
   margin-right: 8px;
+}
+
+.footer_item:hover svg path {
+  transition: all .5s;
 }
 
 .footer_item:hover,
@@ -226,10 +208,9 @@ button {
   fill: #2581EB;
 }
 
-
-
 .menu_mobile {
   display: none;
+
 }
 
 .main,
@@ -243,7 +224,7 @@ button {
 .form {
   position: absolute;
   z-index: 3;
-  top: 50%;
+  top: -100%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -255,10 +236,12 @@ button {
   font-family: Inter;
   font-weight: 500;
   line-height: 22px;
-  display: none;
+  transition: all 1s;
+
 }
-.form_open{
-  display: block;
+
+.form_open {
+  top: 50%
 }
 
 .form_close {
@@ -282,6 +265,7 @@ button {
   gap: 4px;
 }
 
+
 .input label {
   font-size: 16px;
 }
@@ -296,6 +280,8 @@ button {
   border: none;
   height: 40px;
   padding: 9px 16px;
+  border: 1px solid #F1F1F1;
+  border-radius: 16px;
 }
 
 .form_text {
@@ -308,7 +294,7 @@ button {
   font-size: 14px;
 }
 
-.form_btn {
+.forhero_btn {
   background-color: #EAB308;
   color: #FFFFFF;
   text-align: center;
@@ -316,7 +302,7 @@ button {
   border-radius: 8px;
 }
 
-.text_span{
+.text_span {
   color: #2581EB;
 }
 
@@ -324,10 +310,9 @@ button {
   background: rgb(0 0 0 / 23%);
 }
 
-.menu_btn{
+.menu_btn {
   display: none;
 }
-
 
 @media (max-width: 1050px) {
   .footer_inner {
@@ -343,7 +328,6 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   .menu {
@@ -352,8 +336,9 @@ button {
 
   .menu_mobile {
     display: block;
+    overflow: hidden;
     position: absolute;
-    top: -800px;
+    top: -900px;
     background-color: #fff;
     width: -webkit-fill-available;
     left: 0;
@@ -369,27 +354,22 @@ button {
     display: block;
     flex-direction: column;
     gap: 8px;
-  }
-
-  .h_m {
-    margin-top: 20px !important;
+    margin-bottom: 20px;
   }
 
   .mobile_open {
     top: -20px;
   }
 
-  .body{
-    transition:  all .5s;
+  .body {
+    transition: all .5s;
   }
 
-
- 
   .menu_item {
     margin: 0 auto;
   }
 
-  .main_inner {
+  .hero {
     margin-top: 52px;
     height: 577px;
   }
@@ -407,9 +387,8 @@ button {
     flex-direction: column;
     justify-content: center;
     gap: 4px;
+    transition: all .5s;
   }
-
-
 
   .menu_btn:hover {
     background-color: Yellow;
@@ -434,9 +413,7 @@ button {
     overflow: hidden;
   }
 
-
-
-  .main_img {
+  .hero_img {
     right: -270px;
     top: 40%;
     left: auto;
@@ -452,7 +429,7 @@ button {
     margin-left: 0px;
   }
 
-  .main_img {
+  .hero_img {
     width: 626px;
     height: 577px;
   }
@@ -463,6 +440,61 @@ button {
     gap: 10px;
 
   }
+
+  /* анимация */
+  .menu_mobile .logo img {
+    width: 0px;
+    transition: all 1s;
+  }
+
+  .mobile_open .logo img {
+    width: 180px;
+  }
+
+  .menu_item:nth-child(2n) {
+    margin-right: -110%;
+    transition: all 1s;
+  }
+
+  .menu_item:nth-child(2n+1):not(.active) {
+    margin-left: -110%;
+    transition: all 1s;
+  }
+
+  .mobile_open .menu_item:nth-child(2n) {
+    margin-right: 0%;
+  }
+
+  .mobile_open .menu_item:nth-child(2n+1):not(.active) {
+    margin-left: 0%;
+  }
+
+  .active {
+    font-size: 0px;
+    border: 0px;
+    transition: all 1s;
+    ;
+  }
+
+  .mobile_open .active {
+    font-size: 14px;
+    border-bottom: 1px solid;
+  }
+
+  .menu_mobile .callback {
+    transition: all 1s;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+  .mobile_open .callback {
+    bottom: 0%;
+  }
+
+
 }
 
 @media (max-width: 800px) {
@@ -480,29 +512,13 @@ button {
     font-size: 80px;
   }
 
-
-  .h_btn {
+  .h_buttons .callback {
     display: none;
-  }
-
-  .h_m {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .display {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-
-  .display .h_btn {
-    display: block;
   }
 }
 
 @media (max-width: 550px) {
-  .main_img {
+  .hero_img {
     width: 370px;
     height: 343px;
     right: -160px;
@@ -510,14 +526,14 @@ button {
 }
 
 @media (max-width: 500px) {
-  .main_img {
+  .hero_img {
     width: 370px;
     height: 343px;
     right: -160px;
     top: 78%;
   }
 
-  .main_inner {
+  .hero {
     margin-top: 46px;
     height: 80vh;
     position: relative;
@@ -528,7 +544,7 @@ button {
     margin-top: 40px;
   }
 
-   .form {
+  .form {
     width: 90%;
     padding: 20px 16px;
   }
@@ -541,11 +557,4 @@ button {
     margin-top: -130px;
     gap: 12px;
   }
-  
-
- 
 }
-
-
-
-
